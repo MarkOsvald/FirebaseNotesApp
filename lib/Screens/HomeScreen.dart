@@ -36,7 +36,7 @@ class QuickNotes extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: themeColour,
-        title: Center(child: Text('Quick notes')),
+        title: Center(child: Text('Notebox')),
         actions: [
           ElevatedButton(
               onPressed: changeColor,
