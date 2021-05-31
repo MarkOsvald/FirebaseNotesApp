@@ -6,7 +6,7 @@ class NewNote extends StatelessWidget {
   TextEditingController headingController = TextEditingController();
   TextEditingController textController = TextEditingController();
 
-  CollectionReference collectionRefrence =
+  CollectionReference collectionReference =
       FirebaseFirestore.instance.collection('notes');
 
   @override
@@ -18,7 +18,7 @@ class NewNote extends StatelessWidget {
         actions: [
           ElevatedButton(
               onPressed: () {
-                collectionRefrence.add({
+                collectionReference.add({
                   'heading': headingController.text,
                   'text': textController.text
                 }).whenComplete(() => Navigator.pop(context));
