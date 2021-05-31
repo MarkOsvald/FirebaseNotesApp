@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:final_project/Screens/HomeScreen.dart';
 
 // ignore: must_be_immutable
 class NewNote extends StatelessWidget {
@@ -14,7 +15,7 @@ class NewNote extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('New note')),
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: QuickNotes.themeColour,
         actions: [
           ElevatedButton(
               onPressed: () {
@@ -23,8 +24,8 @@ class NewNote extends StatelessWidget {
                   'text': textController.text
                 }).whenComplete(() => Navigator.pop(context));
               },
-              style: ElevatedButton.styleFrom(primary: Colors.deepOrangeAccent),
-              child: Text('Done'))
+              style: ElevatedButton.styleFrom(primary: QuickNotes.themeColour),
+              child: Icon(Icons.check))
         ],
       ),
       backgroundColor: Colors.grey,

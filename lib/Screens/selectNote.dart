@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:final_project/Screens/HomeScreen.dart';
 
 // ignore: must_be_immutable
 class SelectNote extends StatefulWidget {
@@ -29,7 +30,7 @@ class _SelectNoteState extends State<SelectNote> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Edit note')),
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: QuickNotes.themeColour,
         actions: [
           ElevatedButton(
               onPressed: () {
@@ -38,14 +39,14 @@ class _SelectNoteState extends State<SelectNote> {
                   'text': textController.text
                 }).whenComplete(() => Navigator.pop(context));
               },
-              style: ElevatedButton.styleFrom(primary: Colors.deepOrangeAccent),
-              child: Text('Done'))
+              style: ElevatedButton.styleFrom(primary: QuickNotes.themeColour),
+              child: Icon(Icons.check))
         ],
       ),
       backgroundColor: Colors.grey,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.delete),
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: QuickNotes.themeColour,
         onPressed: () {
           widget.docToEdit.reference
               .delete()

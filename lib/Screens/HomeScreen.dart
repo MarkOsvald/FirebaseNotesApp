@@ -2,19 +2,52 @@ import 'package:final_project/Screens/newNote.dart';
 import 'package:final_project/Screens/selectNote.dart';
 import 'package:flutter/material.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'dart:math';
 
-class HomePage extends StatelessWidget {
+class HomeScreen extends StatefulWidget{
+  @override
+  State<StatefulWidget> createState() => QuickNotes();
+}
+
+class QuickNotes extends State<HomeScreen> {
+  var random = new Random();
+  static Color themeColour = Colors.black;
+  List<Color> colorList = [
+    Colors.deepOrange,
+    Colors.red,
+    Colors.green,
+    Colors.yellow,
+    Colors.pink,
+    Colors.blue,
+    Colors.black,
+    Colors.brown,
+    Colors.deepPurple,
+    Colors.tealAccent
+  ];
+
+  void changeColor(){
+    setState(() {
+      themeColour = colorList[random.nextInt(10)];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: themeColour,
         title: Center(child: Text('Quick notes')),
+        actions: [
+          ElevatedButton(
+              onPressed: changeColor,
+              style: ElevatedButton.styleFrom(primary: themeColour),
+              child: Icon(Icons.color_lens_outlined))
+        ],
       ),
       backgroundColor: Colors.grey,
       floatingActionButton: FloatingActionButton(
         child: Icon(Icons.edit),
-        backgroundColor: Colors.deepOrangeAccent,
+        backgroundColor: themeColour,
         onPressed: () {
           Navigator.push(context, MaterialPageRoute(builder: (_) => NewNote()));
         },
@@ -63,4 +96,5 @@ class HomePage extends StatelessWidget {
           }),
     );
   }
+
 }
