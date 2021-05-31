@@ -58,7 +58,6 @@ class _SelectNoteState extends State<SelectNote> {
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(border: Border.all()),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: TextField(
@@ -69,13 +68,8 @@ class _SelectNoteState extends State<SelectNote> {
                 ),
               ),
             ),
-            Container(
-              height: 5,
-              color: Colors.grey,
-            ),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(border: Border.all()),
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: TextField(

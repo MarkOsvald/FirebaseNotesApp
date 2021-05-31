@@ -39,8 +39,11 @@ class HomePage extends StatelessWidget {
                                   )));
                     },
                     child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                        color: Colors.white,
+                      ),
                       margin: EdgeInsets.all(5),
-                      color: Colors.white,
                       child: Column(
                         children: [
                           //Text(""),

@@ -34,7 +34,6 @@ class NewNote extends StatelessWidget {
         child: Column(
           children: [
             Container(
-              decoration: BoxDecoration(border: Border.all()),
               child: Padding(
                 padding: const EdgeInsets.all(5.0),
                 child: TextField(
@@ -45,13 +44,8 @@ class NewNote extends StatelessWidget {
                 ),
               ),
             ),
-            Container(
-              height: 5,
-              color: Colors.grey,
-            ),
             Expanded(
               child: Container(
-                decoration: BoxDecoration(border: Border.all()),
                 child: Padding(
                   padding: const EdgeInsets.all(5.0),
                   child: TextField(
